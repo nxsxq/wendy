@@ -1,0 +1,42 @@
+#auto draw 20 boxs
+import random
+
+import turtle
+
+turtle.screensize(800,600,"green")
+
+turtle.speed(0)
+
+
+tpen=turtle.Pen()
+
+tpen.shape("turtle")
+
+tpen.width(7)
+
+def square(size,angle):
+    for i in range(4):
+        tpen.forward(size)
+        tpen.left(angle)
+        tpen.circle(-30,steps=3)
+        tpen.circle(20)
+colorlist=["red","white","blue","yellow","orange"]      
+for i in range(20):
+    color=random.choice(colorlist)
+    tpen.pencolor(color)
+    x=random.randrange(-200,200)
+    y=random.randrange(-200,200)
+
+    tpen.up()        
+    tpen.goto(x,y)
+    tpen.down()
+    
+    size=random.randint(50,150)
+    square(size,90)
+    
+
+#tpen.forward(200)
+
+#square()
+    
+turtle.done()
